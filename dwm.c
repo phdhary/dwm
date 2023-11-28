@@ -239,7 +239,7 @@ static void monocle(Monitor *m);
 static void motionnotify(XEvent *e);
 static void movemouse(const Arg *arg);
 static Client *nexttiled(Client *c);
-static void pop(Client *c);
+// static void pop(Client *c);
 static void propertynotify(XEvent *e);
 static void quit(const Arg *arg);
 static Monitor *recttomon(int x, int y, int w, int h);
@@ -263,7 +263,7 @@ static void setmfact(const Arg *arg);
 static void setup(void);
 static void seturgent(Client *c, int urg);
 static void showhide(Client *c);
-static void spawn(const Arg *arg);
+// static void spawn(const Arg *arg);
 static Monitor *systraytomon(Monitor *m);
 static void tag(const Arg *arg);
 static void tagmon(const Arg *arg);
@@ -1534,14 +1534,14 @@ nexttiled(Client *c)
 	return c;
 }
 
-void
-pop(Client *c)
-{
-	detach(c);
-	attach(c);
-	focus(c);
-	arrange(c->mon);
-}
+// void
+// pop(Client *c)
+// {
+// 	detach(c);
+// 	attach(c);
+// 	focus(c);
+// 	arrange(c->mon);
+// }
 
 void
 propertynotify(XEvent *e)
@@ -2041,27 +2041,27 @@ showhide(Client *c)
 	}
 }
 
-void
-spawn(const Arg *arg)
-{
-	struct sigaction sa;
-
-	if (arg->v == dmenucmd)
-		dmenumon[0] = '0' + selmon->num;
-	if (fork() == 0) {
-		if (dpy)
-			close(ConnectionNumber(dpy));
-		setsid();
-
-		sigemptyset(&sa.sa_mask);
-		sa.sa_flags = 0;
-		sa.sa_handler = SIG_DFL;
-		sigaction(SIGCHLD, &sa, NULL);
-
-		execvp(((char **)arg->v)[0], (char **)arg->v);
-		die("dwm: execvp '%s' failed:", ((char **)arg->v)[0]);
-	}
-}
+// void
+// spawn(const Arg *arg)
+// {
+// 	struct sigaction sa;
+//
+// 	if (arg->v == dmenucmd)
+// 		dmenumon[0] = '0' + selmon->num;
+// 	if (fork() == 0) {
+// 		if (dpy)
+// 			close(ConnectionNumber(dpy));
+// 		setsid();
+//
+// 		sigemptyset(&sa.sa_mask);
+// 		sa.sa_flags = 0;
+// 		sa.sa_handler = SIG_DFL;
+// 		sigaction(SIGCHLD, &sa, NULL);
+//
+// 		execvp(((char **)arg->v)[0], (char **)arg->v);
+// 		die("dwm: execvp '%s' failed:", ((char **)arg->v)[0]);
+// 	}
+// }
 
 void
 setclienttagprop(Client *c)
