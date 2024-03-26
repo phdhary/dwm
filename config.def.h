@@ -41,9 +41,12 @@ static const Rule rules[] = {
 	{ "Gimp",                   NULL,     NULL,           0,         1,          0,           0,        -1 },
   { "btop",                   NULL,     NULL,           0,         1,          0,           0,        -1 },
 	{ "ncmpcpp",                NULL,     NULL,           0,         1,          0,           0,        -1 },
-	// { "Firefox",                NULL,     NULL,           1 << 8,    0,          0,          -1,        -1 },
+	{ NULL,                     NULL,     "Calculator",   0,         1,          0,           0,        -1 },
 	{ "St",                     NULL,     NULL,           0,         0,          1,           0,        -1 },
   { "Alacritty",              NULL,     NULL,           0,         0,          1,           0,        -1 },
+  { "Firefox",                NULL,     NULL,           0,         0,          0,           1,        -1 },
+  { "firefox-nightly",        NULL,     NULL,           0,         0,          0,           1,        -1 },
+  { "Google-chrome",          NULL,     NULL,           0,         0,          0,           1,        -1 },
 	{ NULL,                     NULL,     "Event Tester", 0,         0,          0,           1,        -1 }, /* xev */
   { "sun-awt-X11-XDialogPeer",NULL,     NULL,           0,         1,          0,           0,        -1 },
 };
